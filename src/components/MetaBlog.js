@@ -1,8 +1,8 @@
-export const MetaBlog = () => {
+export const MetaBlog = ({width,height}) => {
   return (
     <svg
-      width="135"
-      height="26"
+      width={width}
+      height={height}
       viewBox="0 0 135 26"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -89,3 +89,4 @@ export const Nawbar = () => {
     </svg>
   );
 };
+

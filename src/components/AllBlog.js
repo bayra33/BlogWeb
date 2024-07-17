@@ -1,24 +1,18 @@
 "use client"; // Ensure this is at the top of your file
-
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const categories = [
-  "All",
-  "React",
-  "JavaScript",
-  "Python",
- 
-];
+const categories = ["All", "React", "JavaScript", "Python"];
 
 export const AllBlogs = () => {
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState([]);
-  const [category, setCategory] = useState("Python");
+  const [category, setCategory] = useState("All");
   const [perPage, setPerPage] = useState(9);
 
   const handleCategory = (category) => {
     setCategory(category);
-    
+
     setPerPage(9);
     // category=='All' ? setPerPage(0):
   };
@@ -69,13 +63,15 @@ export const AllBlogs = () => {
 
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {blogs.map((blog) => (
-          <BlogCard
-            key={blog.title}
-            image={blog.cover_image}
-            title={blog.title}
-            date={blog.published_at}
-            tags={blog.tag_list}
-          />
+          <Link key={blog.id} href={`/blog/${blog.id}`}>
+            <BlogCard
+              key={blog.title}
+              image={blog.cover_image}
+              title={blog.title}
+              date={blog.published_at}
+              tags={blog.tag_list}
+            />
+          </Link>
         ))}
       </div>
 
@@ -107,7 +103,7 @@ const BlogCard = ({ image, title, date, tags }) => {
       </div>
     </div>
   );
-};  
+};
 
 const BlogTag = ({ tag }) => {
   return (
@@ -116,4 +112,3 @@ const BlogTag = ({ tag }) => {
     </div>
   );
 };
-

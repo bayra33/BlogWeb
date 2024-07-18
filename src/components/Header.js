@@ -1,9 +1,10 @@
-import { MetaBlog, Nawbar } from "./MetaBlog";
+import { MetaBlog, Nawbar,} from "./MetaBlog";
+import { Search } from "./Search";
 import Link from "next/link";
 
 export const Header = () => {
   return (
-    <div className="w-full flex flex-col lg:flex-row justify-between bg-white lg:w-[1100px] m-auto p-4 lg:p-0">
+    <div id="adad" className="w-full flex flex-col lg:flex-row justify-between bg-white lg:w-[1100px] m-auto p-4 lg:p-0">
       <div className="flex justify-between w-full lg:w-auto">
         <Link href="/"><MetaBlog width={"135px"} height={"35px"} /></Link>
       </div>
@@ -18,7 +19,8 @@ export const Header = () => {
           <p className="dark:md:hover:text-cyan-600">Contact</p>
         </Link>
       </div>
-      <Nawbar className="hidden lg:flex" />
+      <Search></Search>
+      {/* <Nawbar className="hidden lg:flex" /> */}
     </div>
   );
 };

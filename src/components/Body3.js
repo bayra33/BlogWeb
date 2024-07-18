@@ -4,6 +4,8 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { MetaBlog } from "./MetaBlog";
 import Link from "next/link";
+import { GoArrowUp } from "react-icons/go";
+
 
 export const Body3 = () => {
   return (
@@ -46,10 +48,15 @@ export const Body3 = () => {
           <div className="text-xl my-5">
             <MetaBlog width="231px" height="54px" />
           </div>
+          <div className="flex justify-between">
           <div className="flex flex-col gap-4">
             <p className="text-xl text-gray-600">Terms of Use</p>
             <p className="text-xl text-gray-600">Privacy Policy</p>
             <p className="text-xl text-gray-600">Cookie Policy</p>
+          </div>
+   
+          <div className=""><Link href="#adad"><GoArrowUp style={{width:"30px", height:"30px"}} /></Link>
+          </div>
           </div>
         </div>
       </div>

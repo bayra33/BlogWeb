@@ -12,9 +12,7 @@ export const Search = () => {
   function toggle() {
     setIsOpen((isOpen) => !isOpen);
   }
-  function toggle() {
-    setIsClose((isClose) => !isClose);
-  }
+  
   return (
     <div className="border-2 rounded-lg flex overflow-hidden ">
       <input
@@ -24,8 +22,7 @@ export const Search = () => {
       />
       <div className="flex justify-center items-center bg-slate-300"></div>
       <div className="App">
-        {isOpen && <SearchTab />},
-        {isClose && <SearchTab />}
+        {isOpen && <SearchTab />}
         <CiSearch style={{ width: "24px", height: "24px" }} onClick={toggle} />
       </div>
     
